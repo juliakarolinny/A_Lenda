@@ -13,14 +13,16 @@ public class Batalha {
 
     public String iniciar(){
         IO.println("------------------------------\n");
-        IO.println(vilao.getNome()
+        IO.println(
+                vilao.getNome()
                 + "(De Nivel"
                 + vilao.getNivel()
                 + "\nApareceu no meio do seu caminho!");
         IO.println("-------------------------------\n");
 
 
-        while (heroi.estaVivo().equals("Sim, o personagem esta vivo.") && vilao.estaVivo().equals("Sim, o personagem esta vivo.")) {
+        while (heroi.estaVivo().equals("Sim, o personagem esta vivo.")
+                && vilao.estaVivo().equals("Sim, o personagem esta vivo.")) {
             exibirStatus();
             int escolha = menuAcao();
 

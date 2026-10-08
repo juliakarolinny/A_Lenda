@@ -14,7 +14,7 @@ public class Voinu extends Heroi {
 
         if (resultadoEnergia.equals("Energia gasta com sucesso.")) {
 
-            int dano = calcularataque() + (getPoder() * 3 / 2);
+            int dano = calcularAtaque() + (getPoder() * 3 / 2);
             IO.println(getNome()
                     + " conjura a "
                     + getNomeQuinwan()
@@ -49,7 +49,7 @@ public class Voinu extends Heroi {
 
 
     @Override
-    public int calcularataque() {
+    public int calcularAtaque() {
         return getNivel() * 10 + getPoder();
     }
 }

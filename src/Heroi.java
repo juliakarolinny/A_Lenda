@@ -94,11 +94,9 @@ public abstract class Heroi extends Personagem implements Descanso {
 
     }
 
-    public  String getNomeQuinwan(){
-        return"";
-    }
+    public  abstract String getNomeQuinwan();
 
-    public int getCustoEnergiaQuinwan(){
-        return 0;
-    }
+
+    public abstract int getCustoEnergiaQuinwan();
+
 }

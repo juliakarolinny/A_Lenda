@@ -13,7 +13,7 @@ public class Kaynam extends Heroi {
 
         if (resultadoEnergia.equals("Energia gasta com sucesso.")) {
 
-            int dano = calcularataque() * 2 + getPoder();
+            int dano = calcularAtaque() * 2 + getPoder();
             IO.println(getNome()
                     + " invoca a "
                     + getNomeQuinwan()
@@ -48,7 +48,7 @@ public class Kaynam extends Heroi {
 
 
     @Override
-    public int calcularataque() {
+    public int calcularAtaque() {
         return getNivel() * 10 + getPoder();
     }
 }

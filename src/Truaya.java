@@ -13,7 +13,7 @@ public class Truaya extends Heroi {
 
         if (resultadoEnergia.equals("Energia gasta com sucesso.")) {
 
-            int dano = calcularataque() + getPoder();
+            int dano = calcularAtaque() + getPoder();
             IO.println(getNome()
                     + " executa o "
                     + getNomeQuinwan()
@@ -55,7 +55,7 @@ public class Truaya extends Heroi {
 
 
     @Override
-    public int calcularataque() {
+    public int calcularAtaque() {
         return getNivel() * 10 + getPoder();
     }
 }

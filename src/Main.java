@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
@@ -76,7 +75,7 @@ public class Main {
         int jogando = 1;
         while (jogando == 1) {
             int vivo = 0;
-            if (heroiAtual.estaVivo().equals("O personagem esta vivo.")) {
+            if (heroiAtual.estaVivo().equals("Sim.O personagem esta vivo.")) {
                 vivo = 1;
             }
 
@@ -104,7 +103,7 @@ public class Main {
                 if (proximoVilao != null) {
                     nomeVilaoTexto = proximoVilao.getNome();
                 }
-                IO.println("2) Enfrentar " + nomeVilaoTexto);
+                IO.println("2) Enfrentar " + nomeVilaoTexto );
                 IO.println("3) Descansar (montar acampamento)");
                 IO.println("4) Ver inventario");
                 IO.println("5) Sair");
@@ -116,7 +115,11 @@ public class Main {
         }
 
         if (!heroiAtual.estaVivo().equals("O personagem esta vivo.")) {
+            IO.println();
+            IO.println("=====================================================");
             IO.println(heroiAtual.getNome() + " caiu em batalha. FIM DE JOGO.");
+            IO.println("=====================================================");
+
         }
     }
 
@@ -212,10 +215,10 @@ public class Main {
 
     private static int enfrentarVilao(Vilao vilao) {
         Batalha batalha = new Batalha(heroiAtual, vilao);
-        String resultadoBatalha = batalha.iniciar();
+        String resultantBattal = batalha.iniciar();
 
         int derrota = 0;
-        if (resultadoBatalha.equals("Derrota do heroi!")) {
+        if (resultantBattal.equals("Derrota do heroi!")) {
             derrota = 1;
         }
 

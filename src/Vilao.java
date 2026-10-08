@@ -25,10 +25,11 @@ public class Vilao extends Personagem{
             return ataqueBase;
         }
 
-        @Override
-        public final int calcularataque() {
-
-            return ataqueBase + ((getVidaMaxima() - getVida()) * ataqueBase) / getVidaMaxima();
+    @Override
+    public final int calcularAtaque() {
+        int vidaPerdida = getVidaMaxima() - getVida();
+        int bonusPorFuria = (vidaPerdida * ataqueBase) / getVidaMaxima();
+        return ataqueBase + bonusPorFuria;
         }
 
 

@@ -10,7 +10,7 @@ public class Otosuanay extends Heroi {
     public void usarQuinwan(Combate alvo) {
         String resultadoEnergia = gastarEnergia(CUSTO_ENERGIA_QUINWAN);
         if (resultadoEnergia.equals("Energia gasta com sucesso.")) {
-            int dano = calcularataque() + getPoder();
+            int dano = calcularAtaque() + getPoder();
             int cura = getPoder() / 2;
 
             IO.println(getNome()
@@ -54,7 +54,7 @@ public class Otosuanay extends Heroi {
 
 
     @Override
-    public int calcularataque() {
+    public int calcularAtaque() {
         return getNivel() * 10 + getPoder();
     }
 }

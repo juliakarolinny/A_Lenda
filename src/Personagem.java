@@ -103,14 +103,14 @@ public abstract class Personagem implements Combate{
     @Override
     public String estaVivo() {
         if(vida> 0) {
-            return "O personagem esta vivo.";
+            return "Sim.O personagem esta vivo.";
         }
         return "Não.O personagem esta morto.";
     }
-    public abstract int calcularataque();
+    public abstract int calcularAtaque();
     @Override
     public void atacar(Combate alvo) {
-        int dano = calcularataque();
+        int dano = calcularAtaque();
         IO.println(nome
                 + " ataca "
                 + alvo.getNome()
@@ -122,7 +122,5 @@ public abstract class Personagem implements Combate{
     }
 
 
-    public int calcularAtaque(){
-        return 0;
-    }
+
 }
