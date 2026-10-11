@@ -11,7 +11,7 @@ public class Batalha {
         this.vilao = vilao;
     }
 
-    public String iniciar(){
+    public boolean iniciar(){
         IO.println("------------------------------\n");
         IO.println(
                 vilao.getNome()
@@ -20,9 +20,7 @@ public class Batalha {
                 + "\nApareceu no meio do seu caminho!");
         IO.println("-------------------------------\n");
 
-
-        while (heroi.estaVivo().equals("Sim, o personagem esta vivo.")
-                && vilao.estaVivo().equals("Sim, o personagem esta vivo.")) {
+        while (heroi.estaVivo() && vilao.estaVivo()) {
             exibirStatus();
             int escolha = menuAcao();
 
@@ -41,18 +39,18 @@ public class Batalha {
                     break;
             }
 
-            if (vilao.estaVivo().equals("Sim, o personagem esta vivo.")) {
+            if (vilao.estaVivo()) {
                 vilao.atacar(heroi);
             }
         }
 
         IO.println();
-        if (heroi.estaVivo().equals("Sim, o personagem esta vivo.")) {
+        if (heroi.estaVivo()) {
             IO.println(vilao.getNome() + " foi derrotado!");
-            return "Vitoria do heroi!";
+            return true;
         } else {
             IO.println(heroi.getNome() + " foi derrotado por " + vilao.getNome() + "...");
-            return "Derrota do heroi!";
+            return false;
         }
     }
 

@@ -76,12 +76,12 @@ public abstract class Personagem implements Combate{
             this.vida = vidaMaxima;
         }
     }
-    public String gastarEnergia(int quantidade) {
+    public boolean gastarEnergia(int quantidade) {
         if (energia >= quantidade) {
             energia -= quantidade;
-            return "Energia gasta com sucesso.";
+            return true;
         }
-        return "Energia insuficiente!";
+        return false;
     }
     protected void recuperarEnergia(int quantidade) {
         energia += quantidade;
@@ -101,11 +101,9 @@ public abstract class Personagem implements Combate{
     }
 
     @Override
-    public String estaVivo() {
-        if(vida> 0) {
-            return "Sim.O personagem esta vivo.";
-        }
-        return "Não.O personagem esta morto.";
+    public boolean estaVivo() {
+        return vida> 0;
+
     }
     public abstract int calcularAtaque();
     @Override

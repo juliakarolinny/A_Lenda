@@ -8,11 +8,7 @@ public class Truaya extends Heroi {
 
     @Override
     public void usarQuinwan(Combate alvo) {
-        String resultadoEnergia = gastarEnergia(CUSTO_ENERGIA_QUINWAN);
-
-
-        if (resultadoEnergia.equals("Energia gasta com sucesso.")) {
-
+        if (gastarEnergia(CUSTO_ENERGIA_QUINWAN)) {
             int dano = calcularAtaque() + getPoder();
             IO.println(getNome()
                     + " executa o "
@@ -23,7 +19,7 @@ public class Truaya extends Heroi {
             alvo.receberDano(dano);
 
             int roubo = dano / 3;
-            restaurarVidaEEnergia(getVida() + roubo, getEnergia());
+            curar(roubo);
             IO.println(getNome()
                     + " rouba "
                     + roubo
@@ -44,18 +40,5 @@ public class Truaya extends Heroi {
     @Override
     public int getCustoEnergiaQuinwan() {
         return CUSTO_ENERGIA_QUINWAN;
-    }
-
-
-    @Override
-    public void descarcar() {
-        restaurarVidaEEnergia(getVida() + 20, getEnergia() + 30);
-        IO.println(getNome() + " descansou e recuperou vida e energia!");
-    }
-
-
-    @Override
-    public int calcularAtaque() {
-        return getNivel() * 10 + getPoder();
     }
 }

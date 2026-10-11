@@ -75,13 +75,20 @@ public abstract class Heroi extends Personagem implements Descanso {
 
     @Override
     public int calcularAtaque() {
-        return 10 + (getNivel() / 10) + (getPoder() / 5);
+        return 10 + getNivel() + (getPoder() / 3);
     }
-
+    @Override
+    public void descarcar() {
+        curar(getVidaMaxima() * 15 / 100);
+        recuperarEnergia(30);
+        IO.println(getNome()
+                + " descansou e recuperou vida e energia!");
+    }
     @Override
     public void descansavel() {
         IO.println(getNome()
                 + " monta acampamento e dorme...");
+        curar(getVidaMaxima() * 15/ 100);
         recuperarEnergia(getEnergiaMaxima());
         IO.println(getNome()
                 + " acordou revigorado. Energia: "
